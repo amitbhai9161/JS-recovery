@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+
+    <style>
+        body{
+            background:linear-gradient(pink,yellow,red,);
+        }
+        .clock{
+            width: 300px;
+            height: 300px;
+          background-color: #dddcdc;
+            border-radius: 50%;
+            margin: 100px auto;
+            position: relative;
+            border: 6px double solid;
+            box-shadow:0 0 10px black ;
+        }
+      .center{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: black;
+      
+        position: absolute;
+        top:140px;
+        left: 140px;
+      }
+        .hour{
+            width: 100px;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            left: 145px;
+            top: 145px;
+            transform-origin:0 0 ;
+        }
+
+        .minute{
+            width: 120px;
+            height: 4px;
+            background-color:#303030;
+            position: absolute;
+            left: 145px;
+            top: 145px;
+            transform-origin:0 0 ;
+
+        }
+        .second{
+            width: 135px;
+            height: 3px;
+            background-color: red;
+            position: absolute;
+            left: 145px;
+            top: 145px;
+            transition: 0.5 ease all;
+            transform-origin:0 0 ;
+
+        }
+
+.number1{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 25px; left: 205px;
+
+}
+.number2{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 70px; left: 255px;
+}
+
+    .number3{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 144px; left: 275px;
+}
+    .number4{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 200px; left: 260px;
+    
+}
+
+
+    .number5{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 250px; left: 220px;
+}
+
+    .number6{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 275px; left: 145px;
+}
+
+    .number7{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 255px; left: 70px;
+
+}
+
+    .number8{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 210px; left: 25px;
+}
+
+
+    .number9{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 140px; left: 5px;
+}
+
+
+    .number10{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+top: 70px; left: 25px;
+}
+
+
+
+    .number11{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 25px; left: 70px;
+}
+
+
+
+    .number12{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(8, 92, 92);
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    position: absolute;
+    top: 5px; left: 140px;
+}
+    </style>
+</head>
+<body onload="startclock()">
+
+    <audio src="tik.mpeg" id="sound1" autoplay></audio>
+    
+    <div class="clock">
+
+<div class="hour" id="hour"></div>
+<div class="minute" id="minute"></div>
+<div class="second" id="second"></div>
+<div class="center"></div>
+
+<div class="number1">1</div>
+<div class="number2">2</div>
+<div class="number3">3</div>
+<div class="number4">4</div>
+<div class="number5">5</div>
+<div class="number6">6</div>
+<div class="number7">7</div>
+<div class="number8">8</div>
+<div class="number9">9</div>
+<div class="number10">10</div>
+<div class="number11">11</div>
+<div class="number12">12</div>
+    </div>
+
+
+
+    <script>
+        function startclock(){
+            var dt = new Date ();
+            var h = dt.getHours();
+            var m = dt.getMinutes();
+            var s = dt.getSeconds();
+            
+if(h>=12){
+    h=h-12;
+}
+
+
+deg1 = (h/12) * 360 ;
+deg2 = (m/60) * 360 ;
+deg3 = (s/60) * 360 ;
+
+deg1=deg1-90;
+deg2=deg2-90;
+deg3=deg3-90;
+
+hour.style.transform="rotate("+deg1+"deg)";
+minute.style.transform="rotate("+deg2+"deg)";
+second.style.transform="rotate("+deg3+"deg)";
+
+
+setTimeout(startclock,1000);
+
+sound1.play();
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <img src="C:\Users\vivek\Desktop\RAM.jpg" id="image1" style="height: 300px; width: 300px;" alt="">
+     <img src="C:\Users\vivek\Desktop\6.png" id="image2" style="height: 300px; width: 300px;" alt="">
+     <hr>
+     <button onclick="swap()">swap</button>
+
+     <script>
+        function swap(){
+var a = image1.src;
+var b = image2.src;
+image1.src = b;
+image2.src = a;
+        }
+     </script>
+</body>
+</html>

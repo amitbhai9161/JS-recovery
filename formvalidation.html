@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formvalidate</title>
+<script>
+    function validateform(){
+        const name = document.getElementById("name").value;
+  const namepattern= /^[A-Za-z\s]+$/;
+if(!namepattern.test(name)){
+    alert("plese enter avalid name");
+
+    document.getElementById("name").style.borderColor="red";
+    return false;
+}
+
+const mobile= document.getElementById("mobile").value;
+const mobilepattern =/^[6789]\d{9}$/;
+if(!mobilepattern.test(mobile)){
+    alert("please enter a valid number");
+    return false;
+}
+const email = document.getElementById("email").value;
+const emailpattern =/^[A-Za-z0-9.%+-]+@gmail\.com$/;
+
+if(!emailpattern.test(email)){
+    alert("please enter a valid email");
+    return false;
+
+    
+}
+
+
+return true;
+
+    }
+        
+    
+    </script>
+
+</head>
+<body>
+    
+    <form onsubmit=" return validateform()">
+        Enter your name:<input type="text" id="name"/><br><br>
+        Enter your mobile number <input type="number" id="moblie"/><br><br>
+        enter your email:<input type="email" id="email"/>
+        <button type="submit">submit</button>
+
+    </form>
+</body>
+</html>
